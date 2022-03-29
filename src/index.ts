@@ -1,17 +1,19 @@
-require('@/hand/functionCall');
-require('@/hand/functionApply');
-require('@/hand/functionBind');
+const deepClone = require('@/hand/deepClone');
 
-const module = {
-	x: 42,
-	getX: function () {
-		return this.x;
+let a = Symbol(1);
+let obj = {
+	id: 1,
+	arr: [1, 2, 3],
+	name: 'Tom',
+	name1: function () {},
+	msg: {
+		age: 18,
 	},
+	[a]: 1,
 };
 
-const unboundGetX = module.getX;
-console.log(unboundGetX()); // The function gets invoked at the global scope
-// expected output: undefined
+let o = deepClone(obj);
+o.arr[0] = 11;
 
-const boundGetX = unboundGetX.functionBind(module);
-console.log(boundGetX());
+console.log(o);
+console.log(obj);
