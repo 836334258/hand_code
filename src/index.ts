@@ -1,11 +1,14 @@
-const promiseAllSettled = require('./hand/promiseAllSettled.ts');
+const promiseRace = require('./hand/promiseRace.ts');
 
-const promises = [Promise.resolve('1'), Promise.reject(2), Promise.resolve(3)];
-
-promiseAllSettled(promises).then((rs) => {
-	console.log(rs);
+const promise1 = new Promise((resolve, reject) => {
+	setTimeout(resolve, 500, 'one');
 });
 
-// Promise.all(promises).then((rs) => {
-//   console.log(rs);
-// });
+const promise2 = new Promise((resolve, reject) => {
+	setTimeout(resolve, 100, 'two');
+});
+
+promiseRace([promise1, promise2]).then((value) => {
+	console.log(value);
+	// Both resolve, but promise2 is faster
+});
