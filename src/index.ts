@@ -1,5 +1,9 @@
-const unique = require('./hand/arrayUnique.ts');
+const arrayReduce = require('./hand/arrayReduce.ts');
 
 const arr = [1, 1, 2, 3, 3];
 
-console.log(unique(arr));
+console.log(
+	arr.arrayReduce((pre, cur) => {
+		return pre + cur;
+	})
+);
