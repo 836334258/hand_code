@@ -1,14 +1,17 @@
 require('@/hand/functionCall');
 require('@/hand/functionApply');
+require('@/hand/functionBind');
 
-const obj = {
-	name: 'obj',
+const module = {
+	x: 42,
+	getX: function () {
+		return this.x;
+	},
 };
 
-function a(name) {
-	console.log(this.name);
-	console.log(name);
-}
+const unboundGetX = module.getX;
+console.log(unboundGetX()); // The function gets invoked at the global scope
+// expected output: undefined
 
-a.functionCall(obj, 'call');
-a.functionApply(obj, ['call']);
+const boundGetX = unboundGetX.functionBind(module);
+console.log(boundGetX());

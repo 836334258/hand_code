@@ -27,5 +27,6 @@ declare global {
 	interface Function<T> {
 		functionCall(_this: any): any;
 		functionApply(_this: any): any;
+		functionBind(_this: any): any;
 	}
 }
