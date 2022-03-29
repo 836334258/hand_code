@@ -23,4 +23,9 @@ declare global {
 		arrayReduce(func: TArrReduceFn, initval?: any): T[];
 		arrayMap(func: TARrrMapFn, thisArg?: any);
 	}
+
+	interface Function<T> {
+		functionCall(_this: any): any;
+		functionApply(_this: any): any;
+	}
 }

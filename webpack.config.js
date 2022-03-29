@@ -1,5 +1,4 @@
 const path = require('path')
-const WebpackDevServer = require('webpack-dev-server')
 
 /**
  * @type {require('webpack').Configuration}
@@ -25,6 +24,9 @@ const config = {
     ],
   },
   resolve:{
+    alias:{
+      '@':path.resolve('src')
+    },
     extensions:['.js','.ts']
   },
   devServer: {
