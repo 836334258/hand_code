@@ -1,9 +1,10 @@
-const arrayReduce = require('./hand/arrayReduce.ts');
+const arrayReduce = require('./hand/arrayMap.ts');
 
 const arr = [1, 1, 2, 3, 3];
 
 console.log(
-	arr.arrayReduce((pre, cur) => {
-		return pre + cur;
-	})
+	arr.arrayMap((cur, idx) => ({
+		cur,
+		idx,
+	}))
 );
