@@ -1,14 +1,5 @@
-const promiseRace = require('./hand/promiseRace.ts');
+const unique = require('./hand/arrayUnique.ts');
 
-const promise1 = new Promise((resolve, reject) => {
-	setTimeout(resolve, 500, 'one');
-});
+const arr = [1, 1, 2, 3, 3];
 
-const promise2 = new Promise((resolve, reject) => {
-	setTimeout(resolve, 100, 'two');
-});
-
-promiseRace([promise1, promise2]).then((value) => {
-	console.log(value);
-	// Both resolve, but promise2 is faster
-});
+console.log(unique(arr));
