@@ -15,6 +15,9 @@ export type TARrrMapFn = (
 	array?: any[]
 ) => void;
 
+export type noop = () => void;
+export type TRest = (...args: any[]) => void;
+
 declare global {
 	interface Array<T> {
 		arrayReduce(func: TArrReduceFn, initval?: any): T[];
