@@ -26,6 +26,6 @@
   },
   "lint-staged": {
     "src/**/*.js": "prettier --write",
-    "src/**/*.ts": "prettier --write"
+    "src/**/*.ts": "prettier --parser=typescript --write"
   }
 }
