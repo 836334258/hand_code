@@ -2,6 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@types/node': ^17.0.23
+  chalk: ^5.0.1
   esbuild-loader: ^2.18.0
   husky: ^7.0.4
   lint-staged: ^12.3.7
@@ -13,6 +14,7 @@ specifiers:
 
 devDependencies:
   '@types/node': registry.npmmirror.com/@types/node/17.0.23
+  chalk: registry.npmmirror.com/chalk/5.0.1
   esbuild-loader: registry.npmmirror.com/esbuild-loader/2.18.0_webpack@5.70.0
   husky: registry.npmmirror.com/husky/7.0.4
   lint-staged: registry.npmmirror.com/lint-staged/12.3.7
@@ -716,6 +718,13 @@ packages:
     resolution: {integrity: sha512-MWPzG54AGdo3nWx7zHZTefseM5Y1ccM7hlQKHRqJkPozUaw3hNbBTMmLn16GG2FUzjR13Cr3NPfhIieX5PzXDA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/caniuse-lite/-/caniuse-lite-1.0.30001320.tgz}
     name: caniuse-lite
     version: 1.0.30001320
+    dev: true
+
+  registry.npmmirror.com/chalk/5.0.1:
+    resolution: {integrity: sha512-Fo07WOYGqMfCWHOzSXOt2CxDbC6skS/jO9ynEcmpANMoPrD+W1r1K6Vx7iNm+AQmETU1Xr2t+n8nzkV9t6xh3w==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/chalk/-/chalk-5.0.1.tgz}
+    name: chalk
+    version: 5.0.1
+    engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
     dev: true
 
   registry.npmmirror.com/chokidar/3.5.3:
